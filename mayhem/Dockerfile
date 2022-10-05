@@ -25,4 +25,4 @@ WORKDIR $SRC/fuzzme
 
 ENV FUZZING_LANGUAGE=python SANITIZER=address FUZZING_ENGINE=libfuzzer
 RUN compile
-RUN chmod +x /out/fuzz_urlparse.pkg
+RUN chmod +x /out/fuzz_fuzzme.pkg
