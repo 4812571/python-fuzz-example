@@ -15,13 +15,13 @@
 ################################################################################
 
 FROM gcr.io/oss-fuzz-base/base-builder-python
-COPY . urllib3
-RUN rm -rf urllib3/mayhem
+COPY . fuzzme
+RUN rm -rf fuzzme/mayhem
 
 COPY mayhem/build.sh $SRC/
 COPY mayhem/fuzz_* $SRC/
 
-WORKDIR $SRC/urllib3
+WORKDIR $SRC/fuzzme
 
 ENV FUZZING_LANGUAGE=python SANITIZER=address FUZZING_ENGINE=libfuzzer
 RUN compile
